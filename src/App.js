@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Pet from "./component/Pet";
-import SearchParams from "./component/SearchParams";
+import AppRouter from "./AppRouter";
 const App = () => {
   return (
     <div>
-      <h1>Adopt me</h1>
-      <SearchParams />
+      <AppRouter />
     </div>
   );
 };
