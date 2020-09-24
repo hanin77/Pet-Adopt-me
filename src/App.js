@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import AppRouter from "./AppRouter";
+import ThemeContext from "./component/ThemeContext";
+
+// top of App function body
+
 const App = () => {
+  const theme = useState("darkblue");
   return (
-    <div>
+    <ThemeContext.Provider value={theme}>
       <AppRouter />
-    </div>
+    </ThemeContext.Provider>
   );
 };
 
