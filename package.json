@@ -18,6 +18,8 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@emotion/babel-preset-css-prop": "^10.2.1",
+    "@emotion/core": "^10.1.1",
     "@frontendmasters/pet": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
