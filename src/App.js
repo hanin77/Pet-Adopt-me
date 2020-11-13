@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import AppRouter from "./AppRouter";
-import ThemeContext from "./component/ThemeContext";
-
+import { Provider } from "react-redux";
+import store from "./store";
 // top of App function body
 
 const App = () => {
-  const theme = useState("darkblue");
   return (
-    <ThemeContext.Provider value={theme}>
+    <Provider store={store}>
       <AppRouter />
-    </ThemeContext.Provider>
+    </Provider>
   );
 };
 

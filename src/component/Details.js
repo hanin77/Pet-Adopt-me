@@ -1,7 +1,7 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
-import ThemeContext from "./ThemeContext";
+import { connect } from "react-redux";
 import Modal from "./Modal";
 class Details extends React.Component {
   constructor() {
@@ -53,16 +53,13 @@ class Details extends React.Component {
           <Carousel media={media} />
           <h1>{name}</h1>
           <h2>{`${animal} — ${breed} — ${location}`}</h2>
-          <ThemeContext.Consumer>
-            {([theme]) => (
-              <button
-                style={{ backgroundColor: theme }}
-                onClick={this.toggleModal}
-              >
-                Adopt {name}
-              </button>
-            )}
-          </ThemeContext.Consumer>
+
+          <button
+            style={{ backgroundColor: this.props.theme }}
+            onClick={this.toggleModal}
+          >
+            Adopt {name}
+          </button>
 
           <p>{description}</p>
           {showModal ? (
@@ -81,5 +78,8 @@ class Details extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  theme: state.theme,
+});
 
-export default Details;
+export default connect(mapStateToProps)(Details);
